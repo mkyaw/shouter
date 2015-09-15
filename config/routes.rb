@@ -5,8 +5,12 @@ Rails.application.routes.draw do
   # :dashboard is a singleton resource
   # it doesn't need /dashboard/:id
   resource :dashboard, only: [:show]
+  
   resource :session, only: [:new, :create, :destroy]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
+  resources :shouts, only: [:create, :show]
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   
   root to: 'homes#show', via: :get
 
+  # :dashboard is a singleton resource
+  # it doesn't need /dashboard/:id
+  resource :dashboard, only: [:show]
   resource :session, only: [:new, :create, :destroy]
   resources :users, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
